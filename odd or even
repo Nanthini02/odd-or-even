@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        int n1 = sc.nextInt();
+        int n2= sc.nextInt();  
+        if ((n1 <= 1 || n1 >= 100) || (n2 <= 1 || n2 >= 100)) {
+            System.out.println("Invalid Input");
+            return;
+        }
+    if (n1>n2){
+            int temp = n1;
+            n1 = n2;
+            n2 = temp;
+        }
+        int evenSum=0,oddSum=0;
+        for (int i=n1;i<=n2;i++) {
+            if (i%2==0) {
+                evenSum+=i;
+            } else {
+                oddSum+=i;
+            }
+        }
+        System.out.printf("The Even Sum value is %.2f\n", (float) evenSum);
+        System.out.printf("The Odd Sum value is %.2f\n", (float) oddSum);
+    }
+}
+    
